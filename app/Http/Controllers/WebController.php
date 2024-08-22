@@ -8,6 +8,16 @@ class WebController extends Controller
 {
     public function myshop()
     {
-        return view('myshop');
+        $address = "IT CP KKU";
+        $mobilephone = "0888888888";
+        $location = "Khon Kaen";
+    
+        return view('myshop',[
+            "address" => $address,
+            "mobilephone" => $mobilephone,
+            "location" => $location
+        ]);
+
+
     }
 }
