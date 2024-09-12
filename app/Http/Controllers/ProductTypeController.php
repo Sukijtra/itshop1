@@ -18,6 +18,8 @@ class ProductTypeController extends Controller
         return view("product_type.index", compact('product_ty'));
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -83,4 +85,11 @@ class ProductTypeController extends Controller
     {
         //
     }
+    public function __construct()
+{
+$this->middleware('auth', ['only' => ['create', 'store', 'edit',
+'delete']]);
+// or
+$this->middleware('auth', ['except' => ['index', 'show']]);
+}
 }

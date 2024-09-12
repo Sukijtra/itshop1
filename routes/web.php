@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +28,7 @@ require __DIR__.'/auth.php';
 
 Route::resource('/products', ProductController::class);
 Route::resource('/product_types', ProductTypeController::class);
+Route::get('/admin-dashboard', [AdminController::class, 'dashboard'])->middleware('is_admin');
+Route::get('/error', function () {
+    return view('error_page');
+    })->name('error');

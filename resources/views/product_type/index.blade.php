@@ -40,6 +40,7 @@
                                                 </div>
                                             </div>
                                         </td>
+                                        @auth
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0">99</p>
                                             <p class="text-xs text-secondary mb-0">ชิ้น</p>
@@ -55,6 +56,7 @@
                                                         class="fa fa-trash"></i> ลบ</button>
                                             </form>
                                         </td>
+                                        @endauth
                                     </tr>
                                 @endforeach
                             </tbody>
